@@ -9,10 +9,13 @@ import GridWithDynamicData from "./src/components/GridWithDynamicData"
 import LoopingComponentWithFlatList from "./src/components/LoopingComponentWithFlatList"
 import ListWithSectionList from "./src/components/ListWithSectionList"
 import ClassBasedComponent from "./src/components/ClassBasedComponent"
-
+import Hook from "./src/components/Hook";
+import ResponsiveLayout from "./src/components/ResponsiveLayout";
+import ButtonComponent from "./src/components/ButtonComponent";
 function App() {
   const [name, setName] = useState('Hello Chhotelal Patel');
   const [name2, setName2] = useState("Chhotelal Patel");
+
   return (
     <View style={styles.mainContainer}>
 
@@ -84,7 +87,19 @@ function App() {
 
 
       {/****************************Looping Component With Flate list *********************/}
-      <ClassBasedComponent />
+      {/* <ClassBasedComponent /> */}
+
+
+      {/********************************************* Hooks*****************************/}
+      {/* <Hook /> */}
+
+      {/********************************************* Hooks*****************************/}
+      {/* <ResponsiveLayout /> */}
+
+
+      {/********************************************* Button*****************************/}
+      <ButtonComponent />
+
 
 
 
@@ -105,7 +120,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     width: "100%",
     height: "100%",
-    backgroundColor: "green",
+    // backgroundColor: "green",
     // padding:10
   },
 
