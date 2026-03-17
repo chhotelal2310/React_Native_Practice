@@ -12,6 +12,13 @@ import ClassBasedComponent from "./src/components/ClassBasedComponent"
 import Hook from "./src/components/Hook";
 import ResponsiveLayout from "./src/components/ResponsiveLayout";
 import ButtonComponent from "./src/components/ButtonComponent";
+import RadioButton from "./src/components/RadioButton";
+import Loader from "./src/components/Loader";
+import Plateform from "./src/components/Plateform";
+
+
+
+
 function App() {
   const [name, setName] = useState('Hello Chhotelal Patel');
   const [name2, setName2] = useState("Chhotelal Patel");
@@ -51,7 +58,9 @@ function App() {
             />
           </View>
         </View>
-      </View></> */}
+      </View>
+      </>  
+*/}
 
 
 
@@ -98,9 +107,17 @@ function App() {
 
 
       {/********************************************* Button*****************************/}
-      <ButtonComponent />
+      {/* <ButtonComponent /> */}
+
+      {/*********************************************Radio Button*************************/}
+      {/* <RadioButton /> */}
 
 
+      {/*********************************************Loader*************************/}
+      {/* <Loader /> */}
+
+      {/*********************************************Loader*************************/}
+      <Plateform />
 
 
     </View>
