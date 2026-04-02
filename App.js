@@ -340,34 +340,99 @@
 /*******************************************************************************************************/
 /*******************************************************************************************************/
 /*******************************************************************************************************/
-/******************************************** API Call ******************************/
+/******************************************** API Call *************************************************/
 
-import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
-function App() {
-  const [data, setData] = useState({});
+// import { useEffect, useState } from 'react';
+// import { Text, View } from 'react-native';
+// function App() {
+//   const [data, setData] = useState({});
 
-  const getAPIData = async () => {
-    const url = 'https://jsonplaceholder.typicode.com/posts/1';
-    let result = await fetch(url);
-    result = await result.json();
-    setData(result);
-  };
+//   const getAPIData = async () => {
+//     const url = 'https://jsonplaceholder.typicode.com/posts/1';
+//     let result = await fetch(url);
+//     result = await result.json();
+//     setData(result);
+//   };
 
-  useEffect(() => {
-    getAPIData();
-  }, []);
+//   useEffect(() => {
+//     getAPIData();
+//   }, []);
 
 
-  return data && Object.keys(data).length > 0 ? (
+//   return data && Object.keys(data).length > 0 ? (
+//     <View>
+//       <Text>ID:{data?.id}</Text>
+//       <Text>User ID: {data?.userId}</Text>
+//       <Text>Title: {data?.title}</Text>
+//     </View>
+//   ) : (
+//     <Text>Data Not Found</Text>
+//   );
+// }
+
+// export default App;
+
+
+// /*******************************************************************************************************/
+// /*******************************************************************************************************/
+// /*******************************************************************************************************/
+// /**************************************************Ref *************************************************/
+
+// import { View, Text, StyleSheet, TextInput, Button, Alert } from 'react-native'
+// import { useRef } from 'react'
+// const App = () => {
+//   const inputRef = useRef();
+//   console.log(inputRef, "inputRef>>>>>>>>>>>>>>>>>>>");
+
+//   const Updateinput = () => {
+//     inputRef.current.focus();
+//     // Alert.alert("This is the update input modal");
+//   }
+
+
+//   return (
+//     <View style={styles.container}>
+//       <TextInput ref={inputRef} placeholder='Enter name...' style={styles.input} />
+//       <TextInput placeholder='Enter password..' style={styles.input} />
+//       <Button title='Update Input' onPress={Updateinput} />
+
+//     </View>
+//   )
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 10,
+//     width: "100%",
+//     height: "100%"
+//   },
+//   input: {
+//     borderWidth: 1,
+//     borderColor: "blue",
+//     marginVertical: 5
+//   }
+
+// })
+
+// export default App
+
+
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+/**************************************************Ref *************************************************/
+import { View, Text } from 'react-native'
+import React from 'react'
+import HeroPage from "./src/redux/screen/HeroPage"
+
+const App = () => {
+  return (
     <View>
-      <Text>ID:{data?.id}</Text>
-      <Text>User ID: {data?.userId}</Text>
-      <Text>Title: {data?.title}</Text>
+      <HeroPage />
     </View>
-  ) : (
-    <Text>Data Not Found</Text>
-  );
+  )
 }
 
-export default App;
+export default App
+

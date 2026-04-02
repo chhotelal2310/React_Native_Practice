@@ -1,0 +1,1 @@
+export const Add_To_Card = "Add To Card";
