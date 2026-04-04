@@ -1,14 +1,32 @@
 import { View, Text, Image, Button } from 'react-native';
-import React from 'react';
-import { AddToCard } from '../action.js';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { AddToCard, RemoveToCard } from '../action.js';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Product = ({ item, index }) => {
-  const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.reducer);
+  const [isAdded, setIsAdded] = useState(false);
 
+  const dispatch = useDispatch();
   const handleAddToCard = item => {
     dispatch(AddToCard(item));
   };
+
+  const handleRemoveCard = item => {
+    console.warn(item);
+    dispatch(RemoveToCard(item.name));
+  };
+
+  useEffect(() => {
+    if (cartItems && cartItems?.length) {
+      const result = cartItems?.filter(element => element?.name == item?.name);
+      if (result.length) {
+        setIsAdded(true);
+      } else {
+        setIsAdded(false);
+      }
+    }
+  }, [cartItems]);
 
   return (
     <View key={index} style={{ padding: 10 }}>
@@ -20,10 +38,18 @@ const Product = ({ item, index }) => {
           style={{ width: 160, height: 200, borderRadius: 5 }}
           source={{ uri: item?.image }}
         />
-        <Button title="Add to Card" onPress={() => handleAddToCard(item)} />
+        {isAdded ? (
+          <Button
+            title="Remove to Card"
+            onPress={() => handleRemoveCard(item)}
+          />
+        ) : (
+          <Button title="Add to Card" onPress={() => handleAddToCard(item)} />
+        )}
       </View>
     </View>
   );
 };
 
-export default Product;
+// export default Product;
+export default React.memo(Product);

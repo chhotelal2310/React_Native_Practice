@@ -27,7 +27,7 @@ const HeroPage = () => {
         'https://image.cdn.shpy.in/301826/1685623144178_1.jpeg?width=600&format=webp',
     },
     {
-      name: 'Ravi Patel',
+      name: 'Anupam Singh',
       color: 'blue',
       price: 4000,
       image: 'https://i.insider.com/5df10d81fd9db229ba736a77?width=700',
